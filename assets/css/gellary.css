@@ -1,0 +1,94 @@
+@import url("styles.css");
+
+.title__container{
+    height: 25vh;
+    align-items: center;
+}
+
+.gallery__container{
+    margin: 0 .5rem;
+    row-gap: 2rem;
+}
+
+.gallery__box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f1f3;
+    overflow: hidden;
+    padding: 1rem;
+    /* display: none; */
+}
+
+.gallery__img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.new{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--white-color);
+    background-color: #e55947;
+    padding: .3rem .75rem;
+    font-size: var(--small-font-size);
+}
+
+/*=============== instagram ==============*/
+.insta__link{
+    position: fixed;
+    left: 1rem;
+    bottom: 5rem;
+    background-color: var(--first-color);
+    padding: .5rem;
+    display: flex;
+    opacity: .9;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+}
+
+.insta__icon{
+    color: var(--white-color);
+    font-size: 1.2rem;
+}
+
+/*====================== Message box================*/
+
+.message__box{
+    display: grid;
+    grid-template-columns:repeat(10,1fr);
+    position: fixed;
+    bottom: 3rem;
+    transition: .4s;
+}
+.close__message{
+    bottom: -50rem;
+}
+
+.message__data{
+    grid-column: 5/9;
+    align-items: center;
+    border: 1px solid var(--first-color);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    color: #000;
+    background: rgba(255,255,255,.5);
+}
+
+.message__close{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+}
+/*================ Media queries ===================*/
+
+@media screen and (min-width: 768px){
+    .gallery__container{
+        grid-template-columns: repeat(4,1fr);
+    } 
+}
+

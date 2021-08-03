@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap");
+/*----- VARIABLES CSS -----*/
+/*Varibles en general*/
+/*Colores*/
+:root {
+  --first-color: #112037;
+  --second-color: #105463;
+  --white-color: #fff; }
+
+/*Fuente y Tipografia*/
+:root {
+  --body-font: 'Tinos', serif;
+  --h1-font-size: 2.3rem;
+  --h2-font-size: 2.3rem;
+  --normal-font-size: 0.93rem;
+  --big-font-size: 5rem;
+  --smaller-font-size: 0.75rem; }
+  @media screen and (min-width: 768px) {
+    :root {
+      --h1-font-size: 4.2rem;
+      --h2-font-size: 3.56rem;
+      --normal-font-size: 1rem;
+      --big-font-size: 10rem;
+      --smaller-font-size: 0.813rem; } }
+
+/*z index*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000; }
+
+/*----- BASE -----*/
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; 
+        margin: 0;
+    padding: 0;}
+
+body {
+  margin: 0 0 0 0;
+  font-family: var(--body-font);
+  font-weight: initial;
+  overflow: hidden; }
+
+h1, h2 {
+  margin: 0;
+  font-weight: initial; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+p {
+  font-size: var(--normal-font-size); }
+
+/*----- LAYOUT -----*/
+.bd-grid {
+  max-width: 1200px;
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  z-index: var(--z-fixed); }
+
+/*----- PAGES -----*/
+
+/*Home*/
+.home {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 1fr;
+      grid-template-rows: 3fr 1fr;
+  height: calc(100vh - 3rem); }
+  .home__primary {
+    width: 0;
+    /*Animation*/
+    background-color: var(--first-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  .home__title {
+    font-size: var(--h1-font-size);
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    color: var(--white-color); 
+letter-spacing: 50px;
+margin-bottom: 10px;}
+  .home__img {
+    width: 215px;
+    height: auto; }
+  .home__secondary {
+    width: 0;
+    /*Animation*/
+    background-color: var(--second-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: bold; }
+  
+  .home__year {
+    font-size: var(--big-font-size);
+    color: var(--white-color);
+letter-spacing: 50px; }
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0; }
+  .l-header {
+    background-color: transparent; }
+  .nav {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 4fr 1fr;
+        grid-template-columns: 3fr 4fr 1fr; }
+    
+  .home {
+    -ms-grid-columns: 4fr 3fr;
+        grid-template-columns: 4fr 3fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    height: 100vh; }
+    .home__primary {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .home__img img {
+      position: absolute;
+      width: 361px;
+      top: 5%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: var(--z-normal); }
+    
+    .home__year {
+      -webkit-writing-mode: vertical-rl;
+          -ms-writing-mode: tb-rl;
+              writing-mode: vertical-rl;
+      margin-left: 5rem; } }
+
+@media screen and (min-width: 1200px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto; } }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../assets/css/view.css">
+
+    <title>Portrait</title>
+    </head>
+    <body>
+        
+        <main class="main-bg">
+            <!-- HOME -->
+            <div class="home">
+                <div class="home__primary">
+                    <h1 class="home__title">Portrait</h1>
+
+                    <div class="home__img">
+                        <img src="" alt="" id="big-img">
+                    </div>
+                </div>
+
+                <div class="home__secondary">
+                    <span class="home__year" id="year"></span>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- ICONOS -->
+        <script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+        
+        <!-- MAIN -->
+        <script src="../assets/js/view.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+        <!-- ANIMATION -->
+        <script>
+            /*HOME PRIMARY*/
+            TweenMax.to(".home__primary", 2, {
+                width: "100%",
+                ease: Expo.easeInOut
+            })
+            gsap.from('.home__title', {opacity: 0, duration: 2, delay: 1.5, y: 100})
+            gsap.from('.home__img img', {opacity: 0, duration: 2, delay:1.5, y: -100})
+
+            /*HOME SECONDARY*/
+            TweenMax.to(".home__secondary", 2.5, {
+                width: "100%",
+                ease: Expo.easeInOut
+            })
+            gsap.from('.home__scroll', {opacity: 0, duration: 3, x: -100})
+            gsap.from('.home__year', {opacity: -1, duration: 1.5, delay: 1.5, x: 100})
+        </script>
+    </body>
+</html>
